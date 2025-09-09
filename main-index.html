@@ -14,6 +14,7 @@
   <nav class="navbar navbar-light bg-light">
     <div class="container-fluid">
       <span class="navbar-brand">Navbar</span>
+      <button id="dark">dark</button>
       <button class="navbar-toggler" type="button">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -50,6 +51,22 @@
   integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 <script>
 
+  
+    // $('body').css('background-color', 'black')
+  const dark = document.querySelector("#dark")
+    let darkNumber = 1
+    dark.addEventListener('click', () =>{
+      
+      darkNumber++
+      if(darkNumber % 2 == 0){
+      dark.textContent = 'white'
+      } else {
+        dark.textContent = 'dark'
+      }
+      console.log(darkNumber)
+    })
+// -----------------------------------------
+
   if (1 == 3){
     console.log('맞아요1')
   } else if(3 == 3) {
@@ -62,7 +79,7 @@
   $('#email').on("input", () =>{
     console.log('안녕')
   })
-
+//  addEventListener('change') <-- 포커스 잃으면 발동!!
   $('#send').on('click', (e) => {
     const email = document.querySelector('#email').value
     const pw = document.querySelector('#pwpwpw').value

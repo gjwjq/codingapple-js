@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>우효www 공인중개사 합격</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            text-decoration: none;
+            list-style: none;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <h1>공인중개사합격인지아닌지알고싶지?</h1>
+    <h4>합격 여부 : <span id="score"></span></h4>
+</body>
+<script>
+    function 합격햇냐(a, b){
+        const score = document.querySelector('#score')
+        if (a < 40 || b < 40) {
+            score.textContent = '불합격'
+        } else if (a + b >= 120) {
+            score.textContent = '합격'
+        } else{
+            score.textContent = '불합격'
+        }
+    }
+    합격햇냐(39, 100)
+</script>
+</html>
