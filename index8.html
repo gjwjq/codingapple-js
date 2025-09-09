@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            text-decoration: none;
+            list-style: none;
+            box-sizing: border-box;
+        }
+      .black-bg {
+        width: 0;
+        height: 100%;
+        position: fixed;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 5;
+        padding: 30px;
+        visibility: hidden;
+        transition: .3s;
+      }
+      .show-modal{
+        visibility: visible;
+        width: 100%;
+      }
+      .white-bg {
+        background: white;
+        border-radius: 5px;
+        padding: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="black-bg">
+      <div class="white-bg">
+        <h4>로그인하세요</h4> 
+        <button class="btn btn-danger" id="close">닫기</button>
+      </div>
+    </div>
+    <button class="login">버튼</button>
+  </body>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script>
+    // $('.login').on('click', () =>{
+    //     $('.black-bg').css('display','block')
+    // })
+    // $('.white-bg').on('click', () =>{
+    //     $('.black-bg').css('display', 'none')
+    // })
+    $('.login').on('click', () => {
+        document.querySelector('.black-bg').classList.add('show-modal')
+    })
+    $('#close').on('click', () =>{
+        document.querySelector('.black-bg').classList.remove('show-modal')
+    })
+  </script>
+</html>

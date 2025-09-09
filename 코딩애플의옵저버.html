@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      background-color: black;
+      height: 6000px;
+    }
+    div{
+      margin-top: 1000px;
+      color: white;
+      text-align: center;
+      opacity: 0;
+      transition: 1s;
+    }
+  </style>
+</head>
+<body>
+  
+  <div><h1>iPhone 15 출시</h1></div>
+  <div><h1>충전포트를 USB-C 타입으로 바꿔달라고요?</h1></div>
+  <div><h1>그래서 충전포트를 제거했습니다</h1></div>
+  <div><h1>자 소개합니다</h1></div>
+  <div><img src="https://image.shop.kt.com/upload/product/WL00072553/1756858899283.png" alt=""></div>  
+  <div style="margin: 0;"></div>
+  
+</body>
+ <script>
+ let observer = new IntersectionObserver((e)=>{
+  e.forEach((박스)=>{
+    if(박스.isIntersecting){
+      박스.target.style.opacity = 1;
+    }
+  })
+ })
+
+ let div = document.querySelectorAll('div')
+ observer.observe(div[0])
+ observer.observe(div[1])
+ observer.observe(div[2])
+ observer.observe(div[3])
+ observer.observe(div[4])
+
+ </script>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/index2.css" />
+  </head>
+  <body>
+    <div class="alert-box" id="alert">
+      <p id="title">알림창임</p>
+      <button id="close">닫기</button>
+    </div>
+    <button onclick="알림창('아이디입력하셈')">버튼1</button>
+    <button onclick="알림창('비번입력하셈')">버튼2</button>
+  </body>
+</html>
+<script>
+  document.getElementById("close").addEventListener("mouseover", () => {
+    document.getElementById("alert").style.display = "none";
+  });
+  function 알림창(내용) {
+    document.getElementById("title").innerHTML = 내용;
+    document.getElementById("alert").style.display = "block";
+  }
+</script>

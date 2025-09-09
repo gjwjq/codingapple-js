@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/index2.css">
+  </head>
+  <body>
+    <div class="alert-box" id="asdf">알림창임<button id="close">닫기</button></div>
+    <button onclick="document.getElementById('asdf').style.display = 'block'; ">버튼</button>
+  </body>
+  <script>
+    const close = document.getElementById('close')
+    const asdf = document.getElementById('asdf')
+    close.addEventListener("click", () =>{
+        asdf.style.display = 'none'
+    })
+  </script>
+</html>

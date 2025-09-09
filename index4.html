@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/index2.css" />
+  </head>
+  <body>
+    <div class="alert-box" id="asdf">
+      알림창임<button id="close" onclick="열기('none')">닫기</button>
+    </div>
+    <button onclick="열기('block')">
+      버튼
+    </button>
+  </body>
+</html>
+<script>
+  const close = document.getElementById("close");
+  const asdf = document.getElementById("asdf");
+  // function 작명(){}
+  function 열기(parameter) {
+    document.getElementById('asdf').style.display = parameter;
+  }
+
+//   parameter(매개변수) 사용 예시!!
+
+// function plus() {
+//     2 + 1
+// }
+// function plus2() {
+//     2 + 2
+// }
+// 위와 같은 방식의 코드를 사용하고 싶은데 하나하나 함수 새로만들기 귀찮으니까
+
+function finalPlus(e) {
+   return 2 + e
+}
+
+const result = finalPlus(2)
+console.log(result)
+
+</script>
