@@ -1,113 +1,237 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/index6.css" />
+  </head>
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Bootstrap demo</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
-  <link rel="stylesheet" href="./css/index6.css" />
-</head>
-
-<body>
-  <nav class="navbar navbar-light bg-light">
-    <div class="container-fluid">
-      <span class="navbar-brand">Navbar</span>
-      <button id="dark">dark</button>
-      <button class="navbar-toggler" type="button">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+  <body>
+    <nav class="navbar navbar-light bg-light">
+      <div class="container-fluid">
+        <span class="navbar-brand">Navbar</span>
+        <button id="dark">dark</button>
+        <button class="navbar-toggler" type="button">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </nav>
+    <ul class="list-group">
+      <li class="list-group-item">An item</li>
+      <li class="list-group-item">A second item</li>
+      <li class="list-group-item">A third item</li>
+      <li class="list-group-item">A fourth item</li>
+      <li class="list-group-item">And a fifth one</li>
+    </ul>
+    <div class="black-bg">
+      <div class="white-bg">
+        <h4>로그인하세요</h4>
+        <form action="success.html">
+          <div class="my-3">
+            <input type="text" class="form-control" id="email" />
+          </div>
+          <div class="my-3">
+            <input type="password" class="form-control" id="pwpwpw" />
+          </div>
+          <button type="submit" class="btn btn-primary" id="send">전송</button>
+          <button type="button" class="btn btn-danger" id="close">닫기</button>
+        </form>
+      </div>
     </div>
-  </nav>
-  <ul class="list-group">
-    <li class="list-group-item">An item</li>
-    <li class="list-group-item">A second item</li>
-    <li class="list-group-item">A third item</li>
-    <li class="list-group-item">A fourth item</li>
-    <li class="list-group-item">And a fifth one</li>
-  </ul>
-  <div class="black-bg">
-    <div class="white-bg">
-      <h4>로그인하세요</h4>
-      <form action="success.html">
-        <div class="my-3">
-          <input type="text" class="form-control" id="email" />
-        </div>
-        <div class="my-3">
-          <input type="password" class="form-control" id="pwpwpw"/>
-        </div>
-        <button type="submit" class="btn btn-primary" id="send">전송</button>
-        <button type="button" class="btn btn-danger" id="close">닫기</button>
-      </form>
+    <button class="login">버튼</button>
+    <div class="alert alert-danger">5초 이내 구매시 사은품 증정!!</div>
+    <!-- ~~js슬라이드~~ -->
+
+    <div class="overflow-hidden">
+    <div class="slide-container">
+      <div class="slide-box1 slide-box"><img src="https://d2hxk0kgvzehcg.cloudfront.net/wp-content/uploads/2022/02/car1-1.png" alt=""></div>
+      <div class="slide-box2 slide-box"><img src="https://d2hxk0kgvzehcg.cloudfront.net/wp-content/uploads/2022/02/car2-1.png" alt=""></div>
+      <div class="slide-box3 slide-box"><img src="https://d2hxk0kgvzehcg.cloudfront.net/wp-content/uploads/2022/02/car3-1.png" alt=""></div>
     </div>
-  </div>
-  <button class="login">버튼</button>
-</body>
+    </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-  integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"
-  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-<script>
+    <button class="slide-btn slide-1">1</button>
+    <button class="slide-btn slide-2">2</button>
+    <button class="slide-btn slide-3">3</button>
+    <button class="slide-btnX before">&lt;</button>
+    <button class="slide-btnX next">&gt;</button>
+    <div class="height-1000px"></div>
+  </body>
 
-  
-    // $('body').css('background-color', 'black')
-  const dark = document.querySelector("#dark")
-    let darkNumber = 1
-    dark.addEventListener('click', () =>{
-      
-      darkNumber++
-      if(darkNumber % 2 == 0){
-      dark.textContent = 'white'
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+    crossorigin="anonymous"
+  ></script>
+  <script>
+
+
+    window.addEventListener('scroll', () =>{
+      if (window.scrollY > 100) {
+        document.querySelector('.navbar').style.fontSize = "16px"
       } else {
-        dark.textContent = 'dark'
+        document.querySelector('.navbar').style.fontSize = "32px"
       }
-      console.log(darkNumber)
     })
-// -----------------------------------------
 
-  if (1 == 3){
-    console.log('맞아요1')
-  } else if(3 == 3) {
-    console.log('맞아요2')
-  }
 
-  // 전송버튼 누르면
-  // 저기 input에 입력한값이 공백이면 알림창띄워주세요
-  
-  $('#email').on("input", () =>{
-    console.log('안녕')
-  })
-//  addEventListener('change') <-- 포커스 잃으면 발동!!
-  $('#send').on('click', (e) => {
-    const email = document.querySelector('#email').value
-    const pw = document.querySelector('#pwpwpw').value
-    if (!email.trim()) {
-      alert('아이디입력안함')
-      e.preventDefault(); 
-    } 
-    else if (!pw.trim()) {
-      alert('비번입력안함')
-      e.preventDefault(); 
-    } 
-    else {
-      alert('우효www로그인성공')
+    // function 리턴이요() {return 123}
+      //return 밑의 코드는 더 이상 실행이 되지 않음 이미 알고있을지 모르지만 이런것도 적어두어야 추억이되고 오래 기억에 남는다 -코딩애플-
+
+      console.log(vat(55555))
+      
+    function vat(a){
+      // 소숫점 2번째 자리까지 반올림하는 코드 (toFixed는 문자열)
+      var num = (a * 1.1).toFixed(2)
+      return parseFloat(num)
+      
     }
-  })
 
-  const btn = document.querySelector(".navbar-toggler");
-  const list = document.querySelector(".list-group");
+    // 슬라이드
 
-  btn.addEventListener("click", () => {
-    list.classList.toggle("show");
-  });
-  $(".login").on("click", () => {
-    document.querySelector(".black-bg").classList.add("show-modal");
-  });
-  $("#close").on("click", () => {
-    document.querySelector(".black-bg").classList.remove("show-modal");
-  });
-</script>
+    let 지금사진 = 1
 
+    $('.next').on('click', () =>{
+      if (지금사진 == 1){
+        $('.slide-container').css('transform', 'translateX(-100vw)')
+        지금사진 += 1
+      } else if (지금사진 == 2) {
+        $('.slide-container').css('transform', 'translateX(-200vw)')
+        지금사진 += 1
+      } 
+        else if (지금사진 == 3) {
+        $('.slide-container').css('transform', 'translateX(0)')
+        지금사진 = 1;
+      } 
+    })
+    let 예전사진 = 1
+    $('.before').on('click', () =>{
+      if (예전사진 == 1){
+        $('.slide-container').css('transform', 'translateX(-200vw)')
+        예전사진 += 1
+      } else if (예전사진 == 2) {
+        $('.slide-container').css('transform', 'translateX(-100vw)')
+        예전사진 += 1
+      } 
+        else if (예전사진 == 3) {
+        $('.slide-container').css('transform', 'translateX(0)')
+        예전사진 = 1;
+      } 
+    })
+
+    $('.slide-1').on('click', () =>{
+      $('.slide-container').css('transform', 'translateX(0)')
+    })
+    $('.slide-2').on('click', () =>{
+      $('.slide-container').css('transform', 'translateX(-100vw)')
+    })
+    $('.slide-3').on('click', () =>{
+      $('.slide-container').css('transform', 'translateX(-200vw)')
+    })
+
+
+    // --------------------------------------------
+    
+    // 5초이내 구매시 사은품 증정!! 기능구현 숙제
+
+    // 참조가능문법
+    // setTimeout(() =>{
+    //   $('.alert').hide()
+    // }, 1000)
+    // setInterval(() =>{
+    //   $('.alert').hide()
+    // }, 1000)
+    let timeNum = 5;
+
+    const timeInterval = setInterval(() => {
+      timeNum--;
+      document.querySelector(
+        ".alert"
+      ).textContent = `${timeNum}초 이내 구매시 사은품 증정!!`;
+      if (timeNum < 1) {
+        clearInterval(timeInterval);
+        document.querySelector(".alert").style.display = "none";
+      }
+    }, 1000);
+    // 정답코드
+    //   <div class="alert alert-danger">
+    //   <span id="num">5</span>초 이내 구매시 사은품 증정
+    // </div>
+    //   var count = 5;
+
+    //   setInterval(function(){
+    //     count -= 1;
+    //     if (count >= 0){
+    //       document.querySelector('#num').innerHTML = count;
+    //     }
+    //   }, 1000);
+    
+// -----------------------------
+
+    // $('body').css('background-color', 'black')
+    const dark = document.querySelector("#dark");
+    let darkNumber = 1;
+    dark.addEventListener("click", () => {
+      darkNumber++;
+      if (darkNumber % 2 == 0) {
+        dark.textContent = "white";
+      } else {
+        dark.textContent = "dark";
+      }
+      console.log(darkNumber);
+    });
+    // -----------------------------------------
+
+    if (1 == 3) {
+      console.log("맞아요1");
+    } else if (3 == 3) {
+      console.log("맞아요2");
+    }
+
+    // 전송버튼 누르면
+    // 저기 input에 입력한값이 공백이면 알림창띄워주세요
+
+    $("#email").on("input", () => {
+      console.log("안녕");
+    });
+    //  addEventListener('change') <-- 포커스 잃으면 발동!!
+    $("#send").on("click", (e) => {
+      const email = document.querySelector("#email").value;
+      const pw = document.querySelector("#pwpwpw").value;
+      if (!email.trim()) {
+        alert("아이디입력안함");
+        e.preventDefault();
+      } else if (!pw.trim()) {
+        alert("비번입력안함");
+        e.preventDefault();
+      } else {
+        alert("로그인성공");
+      }
+    });
+
+    const btn = document.querySelector(".navbar-toggler");
+    const list = document.querySelector(".list-group");
+
+    btn.addEventListener("click", () => {
+      list.classList.toggle("show");
+    });
+    $(".login").on("click", () => {
+      document.querySelector(".black-bg").classList.add("show-modal");
+    });
+    $("#close").on("click", () => {
+      document.querySelector(".black-bg").classList.remove("show-modal");
+    });
+  </script>
 </html>

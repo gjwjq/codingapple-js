@@ -34,3 +34,42 @@
   border-radius: 5px;
   padding: 30px;
 }
+
+.slide-container{
+  width: 300vw;
+  transition: .5s;
+}
+.slide-box{
+  width: 100vw;
+  float: left;
+}
+.slide-box img{
+  width: 100%;
+  object-fit: cover;
+}
+.overflow-hidden{
+  overflow: hidden;
+}
+.slide-btn{
+  padding: 10px;
+  width: 200px;
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 5;
+  transition: .5s;
+  font-size: 32px;
+}
+.navbar-brand{
+  font-size: 30px;
+}
+.height-1000px{
+  height: 1000px;
+}
+.slide-btnX{
+  padding: 10px 30px;
+}
