@@ -5,7 +5,15 @@
   list-style: none;
   box-sizing: border-box;
 }
-
+#progress-bar {
+  position: fixed; /* 페이지 상단에 고정시키는 것이다! */
+  top: 0;
+  left: 0;
+  width: 0%; /* 처음에는 폭을 0으로 둔다! */
+  height: 5px; /* 바의 두께를 정한다! */
+  background-color: #ff0000; /* DIO의 색깔처럼 강렬한 붉은색으로! */
+  z-index: 9999; /* 다른 요소보다 위에 오게 한다! */
+}
 .list-group {
   display: none;
 }
@@ -72,4 +80,18 @@
 }
 .slide-btnX{
   padding: 10px 30px;
+}
+
+.upScroll{
+  opacity: 0;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  cursor: pointer;
+  background-color: #33333379;
+  color: white;
+  font-weight: bold;
 }

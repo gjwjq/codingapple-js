@@ -14,6 +14,7 @@
   </head>
 
   <body>
+    <div id="progress-bar"></div>
     <nav class="navbar navbar-light bg-light">
       <div class="container-fluid">
         <span class="navbar-brand">Navbar</span>
@@ -50,11 +51,26 @@
     <!-- ~~js슬라이드~~ -->
 
     <div class="overflow-hidden">
-    <div class="slide-container">
-      <div class="slide-box1 slide-box"><img src="https://d2hxk0kgvzehcg.cloudfront.net/wp-content/uploads/2022/02/car1-1.png" alt=""></div>
-      <div class="slide-box2 slide-box"><img src="https://d2hxk0kgvzehcg.cloudfront.net/wp-content/uploads/2022/02/car2-1.png" alt=""></div>
-      <div class="slide-box3 slide-box"><img src="https://d2hxk0kgvzehcg.cloudfront.net/wp-content/uploads/2022/02/car3-1.png" alt=""></div>
-    </div>
+      <div class="slide-container">
+        <div class="slide-box1 slide-box">
+          <img
+            src="https://d2hxk0kgvzehcg.cloudfront.net/wp-content/uploads/2022/02/car1-1.png"
+            alt=""
+          />
+        </div>
+        <div class="slide-box2 slide-box">
+          <img
+            src="https://d2hxk0kgvzehcg.cloudfront.net/wp-content/uploads/2022/02/car2-1.png"
+            alt=""
+          />
+        </div>
+        <div class="slide-box3 slide-box">
+          <img
+            src="https://d2hxk0kgvzehcg.cloudfront.net/wp-content/uploads/2022/02/car3-1.png"
+            alt=""
+          />
+        </div>
+      </div>
     </div>
 
     <button class="slide-btn slide-1">1</button>
@@ -63,6 +79,14 @@
     <button class="slide-btnX before">&lt;</button>
     <button class="slide-btnX next">&gt;</button>
     <div class="height-1000px"></div>
+
+    <div class="lorem" style="width: 200px; height: 100px; overflow-y: scroll">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi quibusdam
+      commodi eligendi nihil, tempora optio ducimus esse voluptates minima! A
+      labore exercitationem voluptate enim quos reiciendis recusandae excepturi
+      voluptatum voluptates!
+    </div>
+    <button class="upScroll">맨 위로</button>
   </body>
 
   <script
@@ -77,73 +101,104 @@
   ></script>
   <script>
 
-
-    window.addEventListener('scroll', () =>{
+    //-------------------------------------------------------
+    window.onscroll = function () {
+    //맨 위로 버튼 만들어보기
+       const upScroll = document.querySelector(".upScroll");
       if (window.scrollY > 100) {
-        document.querySelector('.navbar').style.fontSize = "16px"
+        upScroll.style.opacity = "1";
       } else {
-        document.querySelector('.navbar').style.fontSize = "32px"
+        upScroll.style.opacity = "0";
       }
-    })
+    //맨 위로 버튼 만들어보기
+      const progressBar = document.getElementById("progress-bar");
+      const scrollTotal =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+      const scrolled = document.documentElement.scrollTop;
 
+      // 전체 스크롤 가능한 거리 대비 현재 위치를 계산하는 것이다!
+      const progress = (scrolled / scrollTotal) * 100;
+
+      // 계산된 퍼센트를 바의 너비에 적용한다!
+      progressBar.style.width = progress + "%";
+    };
+    // 스크롤Y---------------------------------------------------------------
+    $(".lorem").on("scroll", (e) => {
+      let scrollAmount = document.querySelector(".lorem").scrollTop; //스크롤 내린 만큼 수치
+      let realHeight = document.querySelector(".lorem").scrollHeight; //웹페이지 전체 높이
+      let factHeight = document.querySelector(".lorem").clientHeight; //스크롤 눈에 보이는 높이
+      if (scrollAmount + factHeight > realHeight - 10) {
+        alert("다읾ㄱ음");
+        e.preventDefault;
+      }
+    });
+
+    window.scrollY;
+    document.documentElement.scrollHeight;
+    document.querySelector("html").clientHeight;
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 100) {
+        document.querySelector(".navbar").style.fontSize = "16px";
+      } else {
+        document.querySelector(".navbar").style.fontSize = "32px";
+      }
+    });
 
     // function 리턴이요() {return 123}
-      //return 밑의 코드는 더 이상 실행이 되지 않음 이미 알고있을지 모르지만 이런것도 적어두어야 추억이되고 오래 기억에 남는다 -코딩애플-
+    //return 밑의 코드는 더 이상 실행이 되지 않음 이미 알고있을지 모르지만 이런것도 적어두어야 추억이되고 오래 기억에 남는다 -코딩애플-
 
-      console.log(vat(55555))
-      
-    function vat(a){
+    console.log(vat(55555));
+
+    function vat(a) {
       // 소숫점 2번째 자리까지 반올림하는 코드 (toFixed는 문자열)
-      var num = (a * 1.1).toFixed(2)
-      return parseFloat(num)
-      
+      var num = (a * 1.1).toFixed(2);
+      return parseFloat(num);
     }
 
     // 슬라이드
 
-    let 지금사진 = 1
+    let 지금사진 = 1;
 
-    $('.next').on('click', () =>{
-      if (지금사진 == 1){
-        $('.slide-container').css('transform', 'translateX(-100vw)')
-        지금사진 += 1
+    $(".next").on("click", () => {
+      if (지금사진 == 1) {
+        $(".slide-container").css("transform", "translateX(-100vw)");
+        지금사진 += 1;
       } else if (지금사진 == 2) {
-        $('.slide-container').css('transform', 'translateX(-200vw)')
-        지금사진 += 1
-      } 
-        else if (지금사진 == 3) {
-        $('.slide-container').css('transform', 'translateX(0)')
+        $(".slide-container").css("transform", "translateX(-200vw)");
+        지금사진 += 1;
+      } else if (지금사진 == 3) {
+        $(".slide-container").css("transform", "translateX(0)");
         지금사진 = 1;
-      } 
-    })
-    let 예전사진 = 1
-    $('.before').on('click', () =>{
-      if (예전사진 == 1){
-        $('.slide-container').css('transform', 'translateX(-200vw)')
-        예전사진 += 1
+      }
+    });
+    let 예전사진 = 1;
+    $(".before").on("click", () => {
+      if (예전사진 == 1) {
+        $(".slide-container").css("transform", "translateX(-200vw)");
+        예전사진 += 1;
       } else if (예전사진 == 2) {
-        $('.slide-container').css('transform', 'translateX(-100vw)')
-        예전사진 += 1
-      } 
-        else if (예전사진 == 3) {
-        $('.slide-container').css('transform', 'translateX(0)')
+        $(".slide-container").css("transform", "translateX(-100vw)");
+        예전사진 += 1;
+      } else if (예전사진 == 3) {
+        $(".slide-container").css("transform", "translateX(0)");
         예전사진 = 1;
-      } 
-    })
+      }
+    });
 
-    $('.slide-1').on('click', () =>{
-      $('.slide-container').css('transform', 'translateX(0)')
-    })
-    $('.slide-2').on('click', () =>{
-      $('.slide-container').css('transform', 'translateX(-100vw)')
-    })
-    $('.slide-3').on('click', () =>{
-      $('.slide-container').css('transform', 'translateX(-200vw)')
-    })
-
+    $(".slide-1").on("click", () => {
+      $(".slide-container").css("transform", "translateX(0)");
+    });
+    $(".slide-2").on("click", () => {
+      $(".slide-container").css("transform", "translateX(-100vw)");
+    });
+    $(".slide-3").on("click", () => {
+      $(".slide-container").css("transform", "translateX(-200vw)");
+    });
 
     // --------------------------------------------
-    
+
     // 5초이내 구매시 사은품 증정!! 기능구현 숙제
 
     // 참조가능문법
@@ -177,8 +232,8 @@
     //       document.querySelector('#num').innerHTML = count;
     //     }
     //   }, 1000);
-    
-// -----------------------------
+
+    // -----------------------------
 
     // $('body').css('background-color', 'black')
     const dark = document.querySelector("#dark");
